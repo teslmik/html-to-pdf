@@ -62,7 +62,8 @@ export const styles = StyleSheet.create({
     fontWeight: 400,
     color: 'rgba(2, 2, 30, 0.7)',
     flexDirection: "row",
-    gap: 2
+    gap: 2,
+    marginBottom: 5
   },
   olText: {
     flexDirection: "row",
@@ -75,16 +76,16 @@ export const styles = StyleSheet.create({
     color: 'rgba(2, 2, 30, 0.7)',
     flexDirection: "row",
     gap: 10,
-    marginBottom: 10
+    marginBottom: 5
   },
   ulImageContainer: {
     height: 22,
     alignItems: 'flex-start',
-    paddingTop: 2,
   },
   ulImage: {
+    paddingTop: 1,
     width: 12,
-    height: 12,
+    height: 13,
   },
   ulLiContainer: {
     flexDirection: "row",
