@@ -27,7 +27,7 @@ const MainPDF: React.FC<{markdown: string}> = ({markdown}) => {
   return (
     <Document style={styles.document}>
       <Page size="A4" style={styles.page}>
-        <Header />
+        <Header title="Sample Technical Audit" />
 
         {
           Array.isArray(domNodes)
