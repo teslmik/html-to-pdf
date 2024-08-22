@@ -57,10 +57,39 @@ export const styles = StyleSheet.create({
     marginBottom: 16,
     color: 'rgba(2, 2, 30, 0.7)',
   },
-  li: {
+  ol: {
     fontSize: 14,
     fontWeight: 400,
     color: 'rgba(2, 2, 30, 0.7)',
+    flexDirection: "row",
+    gap: 2
+  },
+  olText: {
+    flexDirection: "row",
+    flex: 1,
+    flexWrap: 'wrap'
+  },
+  ul: {
+    fontSize: 14,
+    fontWeight: 400,
+    color: 'rgba(2, 2, 30, 0.7)',
+    flexDirection: "row",
+    gap: 10,
+    marginBottom: 10
+  },
+  ulImageContainer: {
+    height: '100%',
+    alignItems: 'flex-start'
+  },
+  ulImage: {
+    width: 12,
+    height: 12,
+    paddingTop: 2
+  },
+  ulLiContainer: {
+    flexDirection: "row",
+    flex: 1,
+    flexWrap: 'wrap'
   },
   span: {
     fontSize: 14,

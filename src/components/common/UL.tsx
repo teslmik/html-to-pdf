@@ -1,10 +1,11 @@
 import { Image, View } from "@react-pdf/renderer";
 import { Fragment } from "react";
 
+import bullet from 'src/assets/bullet.png';
+import { styles } from 'src/styles';
+import { getListItems } from "src/utils/get-list-items";
 import { ChildArrayType, renderComponents } from "src/utils/render-components";
 import { Li } from "./LI";
-import { styles } from 'src/styles';
-import bullet from '../../assets/bullet.png';
 
 export const Ul: React.FC<{ children: ChildArrayType }> = ({ children }) => {
   return (
@@ -12,43 +13,25 @@ export const Ul: React.FC<{ children: ChildArrayType }> = ({ children }) => {
       {
         children.props.children
           .filter((item: string) => !/^\s*$/.test(item))
-          .map((child: ChildArrayType, index: number, arr: ChildArrayType[]) => {
-            const liItems = Array.isArray(child.props.children)
-              ? {
-                ...child,
-                props: {
-                  ...child.props,
-                  children: child.props.children
-                    .filter((item: ChildArrayType) => item.type !== 'ul' && item.type !== 'ol')
-                }
-              }
-              : child;
-            const nestedList = Array.isArray(child.props.children)
-              ? {
-                ...child,
-                props: {
-                  ...child.props,
-                  children: child.props.children
-                    .filter((item: ChildArrayType) => item.type === 'ul' || item.type === 'ol')
-                }
-              }
-              : null;
+          .map((child: ChildArrayType, index: number) => {
+            const liItems = getListItems(child) as ChildArrayType;
+            const nestedList = getListItems(child, true);
 
             const isExistChild = typeof liItems.props.children !== 'string';
             return (
               <Fragment key={index}>
-                <View style={{ flexDirection: "row", gap: 10, marginBottom: 10, ...styles.li }}>
-                  <View style={{ height: '100%', alignItems: 'flex-start' }}>
-                    <Image source={bullet} style={{ width: 12, height: 12, paddingTop: 2 }} />
+                <View style={styles.ul}>
+                  <View style={styles.ulImageContainer}>
+                    <Image source={bullet} style={styles.ulImage} />
                   </View>
                   {
                     isExistChild
                       ? (
-                        <View style={{ flexDirection: "row", flex: 1, flexWrap: 'wrap' }}>
+                        <View style={styles.ulLiContainer}>
                           <Li>{liItems}</Li>
                         </View>
                       )
-                      : (<Li>{liItems}</Li>)
+                      : <Li>{liItems}</Li>
                   }
                 </View>
                 <View style={{ marginLeft: 20 }}>
@@ -63,7 +46,7 @@ export const Ul: React.FC<{ children: ChildArrayType }> = ({ children }) => {
               </Fragment>
             )
           }
-        )
+          )
       }
     </View>
   );

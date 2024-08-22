@@ -1,9 +1,10 @@
 import { Text, View } from "@react-pdf/renderer";
 import { Fragment } from "react";
 
+import { styles } from 'src/styles';
+import { getListItems } from "src/utils/get-list-items";
 import { ChildArrayType, renderComponents } from "src/utils/render-components";
 import { Li } from "./LI";
-import { styles } from 'src/styles'
 
 export const Ol: React.FC<{ children: ChildArrayType }> = ({ children }) => {
   return (
@@ -12,32 +13,14 @@ export const Ol: React.FC<{ children: ChildArrayType }> = ({ children }) => {
         children.props.children
           .filter((item: string) => !/^\s*$/.test(item))
           .map((child: ChildArrayType, index: number) => {
-            const liItems = Array.isArray(child.props.children)
-              ? {
-                ...child,
-                props: {
-                  ...child.props,
-                  children: child.props.children
-                    .filter((item: ChildArrayType) => item.type !== 'ul' && item.type !== 'ol')
-                }
-              }
-              : child;
-            const nestedList = Array.isArray(child.props.children)
-              ? {
-                ...child,
-                props: {
-                  ...child.props,
-                  children: child.props.children
-                    .filter((item: ChildArrayType) => item.type === 'ul' || item.type === 'ol')
-                }
-              }
-              : null;
+            const liItems = getListItems(child) as ChildArrayType;
+            const nestedList = getListItems(child, true);
 
             return (
               <Fragment key={index}>
-                <View style={{ flexDirection: "row", gap: 2, ...styles.li }}>
+                <View style={styles.ol}>
                   <Text style={{ width: 20 }}>{`${index + 1}.`}</Text>
-                  <View style={{ flexDirection: "row", flex: 1, flexWrap: 'wrap' }}><Li>{liItems}</Li></View>
+                  <View style={styles.olText}><Li>{liItems}</Li></View>
                 </View>
                 <View style={{ marginLeft: 20 }}>
                   {
