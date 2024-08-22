@@ -26,11 +26,7 @@ export const Ul: React.FC<{ children: ChildArrayType }> = ({ children }) => {
                   </View>
                   {
                     isExistChild
-                      ? (
-                        <View style={styles.ulLiContainer}>
-                          <Li>{liItems}</Li>
-                        </View>
-                      )
+                      ? <View style={styles.ulLiContainer}><Li>{liItems}</Li></View>
                       : <Li>{liItems}</Li>
                   }
                 </View>
