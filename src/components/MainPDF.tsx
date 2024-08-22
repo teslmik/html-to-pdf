@@ -8,7 +8,8 @@ import suisseIntlMediumSource from 'src/assets/fonts/SuisseBPIntl-Medium.ttf';
 import suisseIntlRegularSource from 'src/assets/fonts/SuisseBPIntl-Regular.ttf';
 import suisseIntlBoldItalicSource from 'src/assets/fonts/SuisseIntl-BoldItalic.ttf';
 import suisseIntlRegularItalicSource from 'src/assets/fonts/SuisseIntl-RegularItalic.ttf';
-import { Footer, Header } from './common';
+import { Header } from './Header';
+import { Footer } from './Footer';
 
 import { styles } from '../styles';
 

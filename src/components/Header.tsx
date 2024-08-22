@@ -1,7 +1,7 @@
 import { Text, View, Image } from "@react-pdf/renderer";
 
 import { styles } from "src/styles";
-import haloLogo from '../../assets/haloLogo.png';
+import haloLogo from '../assets/haloLogo.png';
 
 export const Header: React.FC<{ title: string }> = ({ title }) => {
   return (
