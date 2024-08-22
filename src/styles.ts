@@ -62,14 +62,6 @@ export const styles = StyleSheet.create({
     fontWeight: 400,
     color: 'rgba(2, 2, 30, 0.7)',
   },
-  listStyle: {
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  listItem: {
-    width: '100%',
-    fontSize: 14,
-  },
   span: {
     fontSize: 14,
     fontWeight: 400,
