@@ -80,6 +80,47 @@ This web site is using "markedjs/marked".
 export const testHtml = `
 <h1><strong>Product Scope</strong></h1>
 
+<h2><strong>Cost Breakdown</strong></h2>
+<table>
+    <thead>
+        <tr>
+            <th>Task</th>
+            <th>Cost Estimate</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>UI/UX Design</td>
+            <td>$2,000 - $3,000</td>
+        </tr>
+        <tr>
+            <td>Backend Development</td>
+            <td>$4,000 - $6,000</td>
+        </tr>
+        <tr>
+            <td>Frontend Development</td>
+            <td>$4,000 - $6,000</td>
+        </tr>
+        <tr>
+            <td>Integration of APIs</td>
+            <td>$2,000 - $3,000</td>
+        </tr>
+        <tr>
+            <td>Analytics and Reports Module</td>
+            <td>$3,000 - $4,000</td>
+        </tr>
+        <tr>
+            <td>QA Testing</td>
+            <td>$2,000 - $3,000</td>
+        </tr>
+        <tr>
+            <td>Final Deployment</td>
+            <td>$2,000 - $3,000</td>
+        </tr>
+    </tbody>
+</table>
+<p><strong>Total</strong>: $20,000 - $30,000</p>
+
 <img src="src/assets/img.jpg"/>
 
 
@@ -299,5 +340,4 @@ export const testHtml = `
 <a href="https://react-pdf.org/"><strong>Powered by React-PDF (Bold)</strong></a>
 
 <a href="https://react-pdf.org/">Powered by React-PDF</a>
-
 `;

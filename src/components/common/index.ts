@@ -8,4 +8,6 @@ export * from './Strong';
 export * from './Link';
 export * from './Image';
 export * from './UL';
-
+export * from './Table/Table';
+export * from './Table/Row';
+export * from './Table/Cell';

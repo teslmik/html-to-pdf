@@ -53,6 +53,8 @@ export const styles = StyleSheet.create({
     color: '#0000FF'
   },
   p: {
+    flexDirection: 'row',
+    gap: 2,
     fontSize: 14,
     marginBottom: 16,
     color: 'rgba(2, 2, 30, 0.7)',
@@ -119,5 +121,33 @@ export const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: 500,
     color: 'rgba(2, 2, 30, 0.5)'
-  }
+  },
+  table: {
+    borderStyle: "solid",
+    borderTopWidth: 1,
+    borderLeftWidth: 1,
+    borderColor: "#bfbfbf",
+    marginBottom: 10,
+  },
+  tableRow: {
+    flexDirection: "row"
+  },
+  tableCol: {
+    flex: 1,
+    borderStyle: "solid",
+    borderRightWidth: 1,
+    borderBottomWidth: 1,
+    borderColor: "#bfbfbf",
+  },
+  tableCell: {
+    margin: "auto",
+    marginTop: 5,
+    marginBottom: 3,
+    verticalAlign: 'sub',
+    fontSize: 12,
+  },
+  headerCell: {
+    fontSize: 14,
+    fontWeight: "bold",
+  },
 });

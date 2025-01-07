@@ -14,6 +14,7 @@ export const renderComponents = (children: ChildrenType) => {
   if (isStringAndEmpty(children)) {
     return null;
   }
+  
 
   if (typeof children === "string") {
     return (

@@ -1,16 +1,20 @@
-import { Text } from "@react-pdf/renderer";
+import { Text, View } from "@react-pdf/renderer";
 
-import { ChildArrayType, renderComponents } from "src/utils/render-components";
+import { ChildArrayType, ChildrenType, renderComponents } from "src/utils/render-components";
 import { styles } from 'src/styles'
+import { Fragment } from "react/jsx-runtime";
 
 export const P: React.FC<{ children: ChildArrayType }> = ({ children }) => {
   return (
-    <Text style={styles.p}>
+    <View style={styles.p}>
       {
         typeof children.props.children === 'string'
-          ? children.props.children
-          : renderComponents(children.props.children)
+          ? (<Text>{children.props.children}</Text>)
+          : children.props.children.map((item: ChildrenType, i: number) => (
+              <Fragment key={i}>{renderComponents(item)}</Fragment>
+            )
+          )
       }
-    </Text>
+    </View>
   )
 }

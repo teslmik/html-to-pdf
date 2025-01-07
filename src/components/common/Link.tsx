@@ -6,7 +6,6 @@ import { ChildArrayType } from "src/utils/render-components";
 
 export const Link: React.FC<{ children: ChildArrayType }> = ({ children }) => {
   const child = children.props.children;
-  
   return (
     <PdfLink src={children.props.href} style={styles.a}>
       {

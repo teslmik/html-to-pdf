@@ -1,6 +1,6 @@
 import { JSXElementConstructor } from "react";
 
-import { H1, H2, H3, Ol, P, Strong, Ul, Image, Link } from "@/components/common";
+import { H1, H2, H3, Ol, P, Strong, Ul, Image, Link, Table, Cell, Row } from "@/components/common";
 
 export const componentMap: Record<string, JSXElementConstructor<any>> = {
   'h1': H1,
@@ -12,4 +12,8 @@ export const componentMap: Record<string, JSXElementConstructor<any>> = {
   'strong': Strong,
   'a': Link,
   'img': Image,
+  'table': Table,
+  'tr': Row,
+  'th': ({ children }) => Cell({ children, header: true }),
+  'td': Cell,
 };
