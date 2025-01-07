@@ -11,3 +11,4 @@ export * from './UL';
 export * from './Table/Table';
 export * from './Table/Row';
 export * from './Table/Cell';
+export * from './Em';

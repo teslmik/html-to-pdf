@@ -14,14 +14,15 @@ export const renderComponents = (children: ChildrenType) => {
   if (isStringAndEmpty(children)) {
     return null;
   }
-  
 
-  if (typeof children === "string") {
-    return (
-      <Text style={styles.span}>
-        {children.trim()}
+  if (typeof children === 'string') {
+    const textArray = children.trim().split(' ');
+
+    return textArray.map((word, index) => (
+      <Text key={index + word} style={styles.span}>
+        {index < textArray.length - 1 ? word + ' ' : word}
       </Text>
-    );
+    ));
   }
 
   const Component = componentMap[children.type as string];

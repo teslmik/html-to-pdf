@@ -10,40 +10,34 @@ import { Li } from "./LI";
 export const Ul: React.FC<{ children: ChildArrayType }> = ({ children }) => {
   return (
     <View style={{ flexDirection: 'column' }}>
-      {
-        children.props.children
-          .filter((item: string) => !/^\s*$/.test(item))
-          .map((child: ChildArrayType, index: number) => {
-            const liItems = getListItems(child) as ChildArrayType;
-            const nestedList = getListItems(child, true);
+      {children.props.children
+        .filter((item: string) => !/^\s*$/.test(item))
+        .map((child: ChildArrayType, index: number) => {
+          const liItems = getListItems(child) as ChildArrayType;
+          const nestedList = getListItems(child, true);
 
-            const isExistChild = typeof liItems.props.children !== 'string';
-            return (
-              <Fragment key={index}>
-                <View style={styles.ul}>
-                  <View style={styles.ulImageContainer}>
-                    <Image source={bullet} style={styles.ulImage} />
-                  </View>
-                  {
-                    isExistChild
-                      ? <View style={styles.ulLiContainer}><Li>{liItems}</Li></View>
-                      : <Li>{liItems}</Li>
-                  }
+          return (
+            <Fragment key={index + 'ulContainer'}>
+              <View style={styles.ul}>
+                <View style={styles.ulImageContainer}>
+                  <Image source={bullet} style={styles.ulImage} />
                 </View>
-                <View style={{ marginLeft: 20 }}>
-                  {
-                    nestedList?.props.children.map((nestedChild: ChildArrayType, nestedIndex: number) => (
-                      <Fragment key={nestedIndex}>
-                        {renderComponents(nestedChild)}
-                      </Fragment>
-                    ))
-                  }
+                <View style={styles.ulLiContainer}>
+                  <Li>{liItems}</Li>
                 </View>
-              </Fragment>
-            )
-          }
-          )
-      }
+              </View>
+              <View style={{ marginLeft: 20 }}>
+                {nestedList?.props.children.map(
+                  (nestedChild: ChildArrayType, nestedIndex: number) => (
+                    <Fragment key={nestedIndex + 'ul'}>
+                      {renderComponents(nestedChild)}
+                    </Fragment>
+                  ),
+                )}
+              </View>
+            </Fragment>
+          );
+        })}
     </View>
   );
 };

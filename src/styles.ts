@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
   document: {
     fontFamily: 'Suisse Intl',
     margin: 0,
-    padding: 0
+    padding: 0,
   },
   page: {
     padding: '40px 40px 40px',
@@ -29,7 +29,13 @@ export const styles = StyleSheet.create({
     marginBottom: 12,
     fontWeight: 500,
   },
-  i: {
+  h4: {
+    fontSize: 12,
+    marginTop: 8,
+    marginBottom: 12,
+    fontWeight: 500,
+  },
+  em: {
     fontStyle: 'italic',
   },
   strong: {
@@ -42,71 +48,85 @@ export const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: '#F4F4F4',
     padding: '26px 105px',
-    marginBottom: 12
+    marginBottom: 12,
   },
   image: {
+    justifyContent: 'center',
+    alignItems: 'center',
     width: '100%',
-    borderRadius: 8
+    // borderRadius: 8,
+    backgroundColor: '#F4F4F4',
+    padding: '26px 105px',
+    marginBottom: 12,
   },
   a: {
     fontSize: 14,
-    color: '#0000FF'
+    color: '#0000FF',
+  },
+  pContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    fontSize: 14,
+    marginBottom: 8,
+    width: '100%',
   },
   p: {
-    flexDirection: 'row',
-    gap: 2,
     fontSize: 14,
-    marginBottom: 16,
+    marginBottom: 8,
     color: 'rgba(2, 2, 30, 0.7)',
+    fontWeight: 400,
+    width: '100%',
   },
   ol: {
     fontSize: 14,
     fontWeight: 400,
     color: 'rgba(2, 2, 30, 0.7)',
-    flexDirection: "row",
+    flexDirection: 'row',
     gap: 2,
-    marginBottom: 5
+    marginBottom: 5,
   },
   olText: {
-    flexDirection: "row",
+    flexDirection: 'row',
     flex: 1,
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
   },
   ul: {
     fontSize: 14,
     fontWeight: 400,
     color: 'rgba(2, 2, 30, 0.7)',
-    flexDirection: "row",
+    flexDirection: 'row',
     gap: 10,
-    marginBottom: 5
+    marginBottom: 5,
   },
   ulImageContainer: {
-    height: 22,
+    position: 'relative',
+    height: 30,
+    width: 12,
     alignItems: 'flex-start',
   },
   ulImage: {
-    paddingTop: 1,
+    position: 'absolute',
+    top: 0,
+    left: 0,
     width: 12,
-    height: 13,
+    height: 12,
   },
   ulLiContainer: {
-    flexDirection: "row",
-    flex: 1,
-    flexWrap: 'wrap'
+    flexDirection: 'row',
+    flexWrap: 'wrap',
   },
   span: {
     fontSize: 14,
     fontWeight: 400,
     color: 'rgba(2, 2, 30, 0.7)',
-    width: '100%',
   },
   pageCount: {
     position: 'absolute',
     fontSize: 12,
     fontWeight: 500,
-    color: "rgba(2, 2, 30, 0.5)",
+    color: 'rgba(2, 2, 30, 0.5)',
     paddingTop: 10,
-    textAlign: "center",
+    textAlign: 'center',
     bottom: 23,
     left: 0,
     right: 0,
@@ -115,12 +135,12 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 35
+    marginBottom: 20,
   },
   headerText: {
     fontSize: 12,
     fontWeight: 500,
-    color: 'rgba(2, 2, 30, 0.5)'
+    color: 'rgba(2, 2, 30, 0.5)',
   },
   table: {
     borderStyle: "solid",

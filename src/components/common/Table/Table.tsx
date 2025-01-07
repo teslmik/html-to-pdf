@@ -9,6 +9,7 @@ export const Table: React.FC<{ children: ChildArrayType }> = ({ children }) => {
     if (typeof item !== 'string') {
       return item.props.children;
     }
+    return item;
   });
 
   return (

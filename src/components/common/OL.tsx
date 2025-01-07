@@ -25,7 +25,7 @@ export const Ol: React.FC<{ children: ChildArrayType }> = ({ children }) => {
                 <View style={{ marginLeft: 20 }}>
                   {
                     nestedList?.props.children.map((nestedChild: ChildArrayType, nestedIndex: number) => (
-                      <Fragment key={nestedIndex}>
+                      <Fragment key={nestedIndex + 'ol'}>
                         {renderComponents(nestedChild)}
                       </Fragment>
                     ))
